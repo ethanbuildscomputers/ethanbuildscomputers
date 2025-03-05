@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Ethan Builds Computers</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="cart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Your Shopping Cart</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="components.html">Select Components</a></li>
+                <li><a href="recommendations.html">Budget Recommendations</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="cart-items">
+            <h2>Items in Your Cart</h2>
+            <ul id="cart-list"></ul>
+            <p id="total-price">Total: $0.00</p>
+        </section>
+        
+        <section id="coupon-section">
+            <h2>Apply a Coupon Code</h2>
+            <input type="text" id="coupon-code" placeholder="Enter coupon code">
+            <button onclick="applyCoupon()">Apply</button>
+            <p id="discount-message"></p>
+        </section>
+        
+        <a href="checkout.html" class="checkout-button">Proceed to Checkout</a>
+    </main>
+</body>
+</html>
