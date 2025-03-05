@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component Selection | Ethan Builds Computers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>Ethan Builds Computers</h1>
+    <p>Choose Your Components</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="faq.html">FAQ</a>
+    <a href="about.html">About Me</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html">Cart</a>
+</nav>
+
+<main>
+    <h2>Select Your Components</h2>
+    <div class="card">
+        <h3>CPU</h3>
+        <p>Choose a processor that suits your needs. Whether for gaming or productivity, we’ve got you covered.</p>
+        <select id="cpu-select">
+            <option value="intel_i9">Intel Core i9</option>
+            <option value="amd_ryzen9">AMD Ryzen 9</option>
+        </select>
+    </div>
+
+    <div class="card">
+        <h3>GPU</h3>
+        <p>Select a graphics card for amazing visual performance.</p>
+        <select id="gpu-select">
+            <option value="nvidia_rtx3080">NVIDIA RTX 3080</option>
+            <option value="amd_rx6800">AMD Radeon RX 6800</option>
+        </select>
+    </div>
+
+    <div class="card">
+        <h3>RAM</h3>
+        <p>Choose the amount of memory you need for smooth multitasking.</p>
+        <select id="ram-select">
+            <option value="16gb">16GB</option>
+            <option value="32gb">32GB</option>
+        </select>
+    </div>
+
+    <div class="card">
+        <h3>Storage</h3>
+        <p>Choose your storage capacity: fast SSD or more storage with HDD.</p>
+        <select id="storage-select">
+            <option value="1tb_ssd">1TB SSD</option>
+            <option value="2tb_hdd">2TB HDD</option>
+        </select>
+    </div>
+
+    <button onclick="addToCart()">Add to Cart</button>
+</main>
+
+<footer>
+    <p>&copy; 2025 Ethan Builds Computers | All Rights Reserved</p>
+</footer>
+
+<script>
+    function addToCart() {
+        const cpu = document.getElementById('cpu-select').value;
+        const gpu = document.getElementById('gpu-select').value;
+        const ram = document.getElementById('ram-select').value;
+        const storage = document.getElementById('storage-select').value;
+
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push({ cpu, gpu, ram, storage });
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        alert('Item added to cart!');
+    }
+</script>
+
+</body>
+</html>
